@@ -16,9 +16,16 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '20.x'
-     
+      - name: Clear npm cache
+        run: npm cache clean --force
+
       - name: Install dependencies
         run: npm install
+
+      - name: Build and test
+        run: |
+          npm run build
+          npm test
       
       - name: Notify about new issue
         run: |
