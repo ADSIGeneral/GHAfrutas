@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleccionar Frutas</title>
+    <style>
+        .fruta {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Seleccionar Frutas</h1>
+
+    <div class="fruta">
+        <label for="manzana">Manzana:</label>
+        <input type="number" id="manzana" name="manzana" min="0" value="0">
+    </div>
+
+    <div class="fruta">
+        <label for="naranja">Naranja:</label>
+        <input type="number" id="naranja" name="naranja" min="0" value="0">
+    </div>
+
+    <div class="fruta">
+        <label for="platano">Plátano:</label>
+        <input type="number" id="platano" name="platano" min="0" value="0">
+    </div>
+
+    <div class="fruta">
+        <label for="uva">Uva:</label>
+        <input type="number" id="uva" name="uva" min="0" value="0">
+    </div>
+
+    <div class="fruta">
+        <label for="pera">Pera:</label>
+        <input type="number" id="pera" name="pera" min="0" value="0">
+    </div>
+
+    <button onclick="calcularTotal()">Calcular Total</button>
+
+    <p>Total de frutas seleccionadas: <span id="total"></span></p>
+
+    <script>
+        function calcularTotal() {
+            // Obtener los valores de las cantidades de frutas
+            var manzana = parseInt(document.getElementById('manzana').value);
+            var naranja = parseInt(document.getElementById('naranja').value);
+            var platano = parseInt(document.getElementById('platano').value);
+            var uva = parseInt(document.getElementById('uva').value);
+            var pera = parseInt(document.getElementById('pera').value);
+
+            // Calcular el total
+            var total = manzana + naranja + platano + uva + pera;
+
+            // Mostrar el total en el elemento span
+            document.getElementById('total').textContent = total;
+        }
+    </script>
+</body>
+</html>
