@@ -11,10 +11,9 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
-
       - name: Notify about new issue
         run: echo "Se ha creado un nuevo issue: ${{ github.event.issue.title }}"
-
+      
       - name: Assign issue
         run: gh issue assign ${{ github.event.issue.number }} --assignee kfjaramillo
 
