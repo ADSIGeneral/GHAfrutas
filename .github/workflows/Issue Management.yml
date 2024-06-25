@@ -16,7 +16,7 @@ jobs:
         run: echo "Se ha creado un nuevo issue: ${{ github.event.issue.title }}"
 
       - name: Assign issue
-        run: gh issue assign ${{ github.event.issue.number }} --assignee username
+        run: gh issue assign ${{ github.event.issue.number }} --assignee kfjaramillo
 
       - name: Add labels based on issue
         run: |
