@@ -17,15 +17,16 @@ jobs:
           echo "${{ toJson(github.event.issue) }}"
       
       
-      - name: Assign issue
+      - name: Assign user to issue
         run: |
-          curl -X POST \
-          -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-          -H "Accept: application/vnd.github.v3+json" \
-          https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/assignees \
-          -d '{
-          "assignees": ["kfjaramillo"]
-          }'
+            curl -X POST \
+              -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+              -H "Accept: application/vnd.github.v3+json" \
+              https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/assignees \
+              -d '{
+                    "assignees": ["kfjaramillo"]
+                  }'
+        
 
       - name: Add labels based on issue
         run: |
