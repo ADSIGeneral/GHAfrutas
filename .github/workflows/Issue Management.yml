@@ -16,7 +16,10 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '20.x'
-   
+     
+      - name: Install dependencies
+        run: npm install
+      
       - name: Notify about new issue
         run: |
           echo "Se ha creado un nuevo issue:"
