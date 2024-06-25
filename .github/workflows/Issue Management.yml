@@ -29,19 +29,20 @@ jobs:
 
       - name: Add labels based on issue
         run: |
-          if echo "${{ github.event.issue.title }}" | grep -q "bug"; then
-             curl -X POST \
+            if echo "${{ github.event.issue.title }}" | grep -q "bug"; then
+              curl -X POST \
                 -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
                 -H "Accept: application/vnd.github.v3+json" \
                 https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/labels \
                 -d '["bug"]'
-           fi
+            fi
         
-          if echo "${{ github.event.issue.title }}" | grep -q "feature"; then
+            if echo "${{ github.event.issue.title }}" | grep -q "feature"; then
               curl -X POST \
                 -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
                 -H "Accept: application/vnd.github.v3+json" \
                 https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/labels \
                 -d '["feature"]'
-          fi
+            fi
+        
         
